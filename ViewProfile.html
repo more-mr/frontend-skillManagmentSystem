@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/viewprofile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <a href="Employee.html" class="back-arrow">← Back</a>
+        <div class="notification-bell" onclick="toggleNotificationPopup()">
+            🔔
+            <!-- <?php if ($notification_count > 0): ?> -->
+                 <span id="notificationCount" class="notification-count">1<!--<?php echo $notification_count; ?>--></span> 
+            <!-- <?php endif; ?> -->
+        </div>
+        <div class="notification-popup" id="notificationPopup">
+            <p id="notificationContent"><!--<?php echo $feedback ? $feedback : 'No new notifications.'; ?>--></p>
+        </div>
+        <h2 style="text-align: center; margin-bottom: 20px;">Profile</h2>
+        <div class="profile-pic"></div>
+        <div class="profile-info">
+            <p><strong id="firstName"><!-- <?php echo $first_name . ' ' . $last_name; ?> --></strong></p>
+            <p id="number"><!-- <?php echo $employee_number; ?> --></p>
+        </div>
+        <!-- <?php if ($upload_success): ?> -->
+            <!-- <div class="success-message"><?php echo htmlspecialchars($upload_success); ?></div> -->
+        <!-- <?php endif; ?> -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Details</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="skillsTableBody">
+                <tr>
+                    <td>Skill</td>
+                    <td>
+                        <select class="dropdown" id="skillDropdown">
+                            <option id="skillList" value="">Select Skill</option>
+                            <!-- <?php foreach (explode(', ', $skills) as $skill): ?> -->
+                                <!-- <option value="<?php echo htmlspecialchars($skill); ?>"><?php echo htmlspecialchars($skill); ?></option> -->
+                            <!-- <?php endforeach; ?> -->
+                        </select>
+                    </td>
+                    <td><span class="delete-btn" onclick="confirmAndDelete('skill')">Delete</span></td>
+                </tr>
+                <tr>
+                    <td>CV</td>
+                    <td>
+                        <select class="dropdown" id="cvDropdown">
+                            <option id="CVList"  value="">Select CV</option>
+                            <!-- <?php foreach ($cv_files as $cv_file): ?> -->
+                                <!-- <option value="<?php echo htmlspecialchars($cv_file); ?>"><?php echo htmlspecialchars($cv_file); ?></option> -->
+                            <!-- <?php endforeach; ?> -->
+                        </select>
+                    </td>
+                    <td><span class="delete-btn" onclick="confirmAndDelete('cv')">Delete</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="exit-button" onclick="logout()">Exit</button>
+    </div>
+
+   
+        <script src="js/viewprofile.js"></script> 
+    
+</body>
+</html>

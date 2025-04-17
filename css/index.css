@@ -1,0 +1,179 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #002147, #ffffff);
+}
+.container-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px; /* Space between sections */
+    width: 90%;
+    max-width: 1000px;
+}
+/* Left Section (Blue Box with Logo) */
+.logo-section {
+    width: 40%;
+    background: #002147;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+.logo-section img {
+    width: 120px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.logo-section img:hover {
+    transform: scale(1.1); /* Adds hover effect */
+}
+.logo-section p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 15px;
+}
+/* Right Section (White Form Box) */
+.form-section {
+    width: 50%;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+.login-box {
+    text-align: center;
+}
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+}
+/* Radio Buttons */
+.radio-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+.radio-buttons span {
+    font-weight: bold;
+}
+.radio-buttons label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+/* Custom radio buttons */
+.radio-buttons input[type="radio"] {
+    display: none;
+}
+.radio-buttons input[type="radio"] + span {
+    position: relative;
+    padding-left: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.radio-buttons input[type="radio"] + span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: white;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.radio-buttons input[type="radio"]:checked + span:before {
+    border-color: blue;
+    background-color: blue;
+}
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+/* Input fields with icon */
+.input-icon {
+    position: relative;
+}
+.input-icon input {
+    padding-left: 35px; /* Added padding to make space for the icon */
+}
+.input-icon i {
+    position: absolute;
+    left: 10px; /* Positioning the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 18px;
+}
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+.form-control:focus {
+    border-color: #002147;
+    outline: none;
+}
+/* Button */
+.btn-primary {
+    background-color: blue;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #0052cc;
+}
+/* Sign-up section */
+.signup-section {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.signup-section a {
+    color: #002147;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.signup-section a:hover {
+    color: #0052cc;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-box {
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
+    }
+    .logo-section, .form-section {
+        width: 100%;
+    }
+}

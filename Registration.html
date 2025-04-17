@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+    <div class="container">
+        <h3 id="regTitle" class="text-center mb-4">Create Account</h3>
+        <!-- <?php if (count($errors) > 0): ?>
+            <?php foreach ($errors as $error): ?> -->
+                <!-- <div class='alert alert-danger'><?php echo htmlspecialchars($error); ?></div> -->
+            <!-- <?php endforeach; ?>
+        <?php endif; ?> -->
+        <div id = "dangerTitle"></div>
+
+
+        <form id="registrationForm" action="http://localhost:8080/Registration/addEmployeeInfo" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="firstname" id="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="lastname" id="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="employeenumber" class="form-label">Employee Number</label>
+                <input type="text" class="form-control" name="employeenumber" id="employeenumber" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" required>
+            </div>
+            <div class="form-group password-container">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" required>
+                <i class="eye-icon" id="togglePassword">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Show" />
+                </i>
+            </div>
+            <div class="form-group password-container">
+                <label for="repeat_password" class="form-label">Repeat Password</label>
+                <input type="password" class="form-control" name="repeat_password" id="repeat_password" required>
+                <i class="eye-icon" id="toggleRepeatPassword">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Show" />
+                </i>
+            </div>
+            <div class="form-group">
+                <label for="group" class="form-label">Group</label>
+                <select class="form-control" id="group" name="group" required>
+                    <option value="Select Group">Select Group</option>
+                    <!-- <?php foreach ($groups as $group): ?> -->
+                        <!-- <option value="<?php echo htmlspecialchars($group['id']); ?>"><?php echo htmlspecialchars($group['display_name']); ?></option> -->
+                    <!-- <?php endforeach; ?> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="profile_picture" class="form-label">Profile Picture</label>
+                <input type="file" class="form-control" name="profile_picture" id="profile_picture" required>
+            </div>
+            <div class="form-btn">
+                <input type="submit" class="btn btn-primary" value="Register" name="submit">
+            </div>
+        </form>
+        <div class="text-center mt-3">
+            <p>Already Registered? <a href="index.html">Login Here</a></p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/registration.js"></script> 
+    <script type="text/javascript">
+    
+    </script>
+</body>
+</html>
